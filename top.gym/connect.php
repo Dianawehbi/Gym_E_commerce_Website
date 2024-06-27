@@ -1,7 +1,7 @@
 <?php
-
+ob_start();
 if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['signup'])) {
-    $conn = mysqli_connect('localhost', 'root', '', 'projectweb') or die('Connection Failed' . mysqli_connect_error());;
+    $conn = mysqli_connect('localhost', 'root', '', 'projectweb') or die('Connection Failed' . mysqli_connect_error());
 
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -9,31 +9,32 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['signup'])) {
     $cpassword = $_POST['cpassword'];
 
     if ($password == $cpassword) {
-
-        $sql = "INSERT INTO `signup` (`id`,`username`,`email`,`password` ) VALUES ('123','$username','$email', '$password' )";
+        // Remove the 'id' column from the insert query
+        $sql = "INSERT INTO `signup` (`username`, `email`, `password`) VALUES ('$username', '$email', '$password')";
         $query = mysqli_query($conn, $sql);
 
         if ($query) {
-            echo "Data inserted succesfully";
-            header("Location: index1.html");
+            echo "Data inserted successfully";
+            header("Location: home.php");
+            exit(); // Ensure no further code is executed after the redirect
         } else {
             echo "Data not inserted";
         }
     } else {
-        echo "your password doent match !!";
+        echo "Your passwords don't match!";
     }
 
     mysqli_close($conn);
 }
-
+ob_end_flush();
 ?>
 <?php
-
+ob_start();
 if (isset($_POST["login"])) {
     $username1 = $_POST['username'];
     $password1 = $_POST['password'];
 
-    $conn = mysqli_connect('localhost', 'root', '', 'projectweb')  or die('Connection Failed' . mysqli_connect_error());
+    $conn = mysqli_connect('localhost', 'root', '', 'projectweb') or die('Connection Failed' . mysqli_connect_error());
     $sql = "SELECT * FROM `signup`";
     $result = mysqli_query($conn, $sql);
 
@@ -44,10 +45,11 @@ if (isset($_POST["login"])) {
             $username = $row['username'];
             $email = $row['email'];
             $password = $row['password'];
-            echo "Username: $username, Email: $email, Password: $password <br>";
+        
+            echo "<h1>Incorrect Username or Password, please try again</h1>";
 
             if ($username1 == $username && $password1 ==  $password) {
-                header("Location: index1.html");
+                header("Location: home.php");
                 exit(); // Ensure no further code is executed after the redirect
             }
         }
@@ -57,6 +59,8 @@ if (isset($_POST["login"])) {
 
     mysqli_close($conn);
 }
-
+ob_end_flush();
 ?>
+
+
 

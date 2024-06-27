@@ -1,0 +1,382 @@
+body {
+    margin: 0px;
+    margin-top: 0;
+    box-sizing: border-box;
+    padding: 0%;
+    border: 0.001px solid white;
+    text-align: center;
+}
+
+
+.head {
+    background-color: hsla(348, 7%, 70%, 0.588);
+    border: 9px rgb(161, 156, 156);
+    height: 40px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .head-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+  }
+  
+  .head h3 {
+    margin: 0; 
+    justify-content: center;
+  }
+  .bag1{
+    background-color: hsla(349, 7%, 70%, 0.888);
+    border: 9px rgb(161, 156, 156);
+    height: 100%;
+    text-align: center;
+    width: 60%;
+    min-width: 450px;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    transition: background-color 0.1s, transform 0.5s;
+}
+.bag1:hover{
+    width: 70%;
+    transform: scale(1.05);
+}
+
+.bag1 h3 {
+    margin-top: 10px;
+}
+
+.bag {
+    margin-top: 9px;
+    margin-left: 2px;
+}
+  
+  .headings {
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  ul li:hover {
+    background-color: #ffe270;
+    border-radius: 10px;
+  }
+  
+  
+
+.bag {
+    margin-top: 9px;
+    margin-left: 2px;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: hsl(349, 40%, 93%);
+}
+.nav p {
+    position: relative;
+    bottom: -60%;
+    margin-left: 5%;
+}
+
+.bag a {
+    color: black;
+}
+
+.makeupic {
+    margin-bottom: 0;
+}
+
+.underphoto {
+    text-align: center;
+    row-gap: 0px;
+}
+
+.makeuptitle {
+    margin-left: 2%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+    color: hsl(349, 40%, 60%);
+    font-style: italic;
+
+}
+
+.card {
+    width: fit-content;
+    height: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 35%;
+    gap: 20px;
+
+}
+
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color:  hsl(349, 7%, 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: .3s;
+}
+
+/* Whatsapp*/
+.containerFour:hover {
+    background-color: #128C7E;
+    transition-duration: .3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: .3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/*
+p::selection,
+img::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+    color: hwb(332 40% 0%);
+    background-color: rgb(197, 195, 195);
+}
+*/
+p::selection,
+img::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+    color: hwb(0 0% 100%);
+    background-color: rgb(197, 195, 195);
+}
+#makeupic {
+    height: auto;
+    width: 100%;
+}
+
+.product-list-all {
+    border: 0.0001px solid white;
+
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.product {
+    border: 2px solid hsl(349, 40%, 93%);
+    border-radius: 15px;
+    width: 45%;
+    height: 20%;
+    overflow: hidden;
+    max-width: 210px;
+    max-height: 370px;
+    min-height: 360px;
+
+}
+
+.product-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.product img:hover {
+    width: 103%;
+
+}
+
+.product img {
+    width: 100%;
+    max-height: 215px;
+}
+
+.price {
+    font-weight: bold;
+    text-align: center;
+}
+
+.plus button {
+    background-color: white;
+    text-align: center;
+    margin: 10%;
+    outline: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.2s ease;
+    color: #606060;
+    text-shadow: 0 1px #fff;
+    
+}
+
+.plus button:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.maincart{
+    text-align: center;
+    border: 0.2px solid rgba(0, 0, 0, 0.158);
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px;
+    
+}
+
+.quantitydiv{
+    display: inline;
+    width: 100px;
+}
+
+.container div{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+   
+}
+#maindiv{
+    margin: 10px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px  rgba(128, 128, 128, 0.538);
+}
+
+.quantitydiv button{
+    margin: 10px;
+    border: none;
+    height: 50%;
+    border-radius: 20px;
+    background-color: rgba(171, 171, 170, 0.338);
+    cursor: pointer;
+}
+.quantitydiv button:hover{
+    background-color: rgba(94, 94, 83, 0.338);
+}
+
+.priceinfo{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.checkout{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1em;
+    margin: 10px;
+    padding: 10px;
+}
+.checkout:hover{
+    background-color: #3c65e21f;
+    cursor: pointer;
+}
+.checkout{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.buttonL {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttonL a {
+    text-decoration: none;
+}
+
+
+/*
+footer {
+    background-color: hsl(349, 40%, 93%);
+    color: hwb(332 19% 3%);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+*/
+footer {
+    background-color:  rgb(97, 96, 96);
+    color: hwb(0 100% 0%);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer p {
+    margin: 0;
+}
